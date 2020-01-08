@@ -1,6 +1,7 @@
 package dev.sgp.web;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ListerCollaborateursController extends HttpServlet {
 	@Override
 	protected void doGet( HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+/***
 		resp.getWriter().write("Hello Lister Collaborateurs Controller");
 		
 		// recupere la valeur d'un parametre dont le nom est avecPhoto
@@ -25,7 +27,14 @@ public class ListerCollaborateursController extends HttpServlet {
 		+ "<li>avecPhoto="+ avecPhotoParam + "</li>"
 		+ "<li>departement="+ departementParam + "</li>"
 		+ "</ul>");		
-		
+
+		req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp")
+		.forward(req, resp);
+***/		
+		// 2eme
+		req.setAttribute("listeNoms", Arrays.asList("Robert", "Jean", "Hugues"));
+		req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp")
+		.forward(req, resp);		
 	}
 
 }
