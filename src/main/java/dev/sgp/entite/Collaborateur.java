@@ -14,6 +14,23 @@ public class Collaborateur {
 	private String photo;
 	private ZonedDateTime dateHeureCreation;
 	private boolean actif;
+	
+	public Collaborateur( 	String nom, 	String prenom, LocalDate dateNaissance, 
+							String adresse, String numSecuSocial) {
+		this.nom 				= nom ; 
+		this.prenom 			= prenom ;
+		this.dateNaissance 		= dateNaissance ;
+		this.adresse 			= adresse ;
+		this.numSecuSocial 		= numSecuSocial ;
+		
+		this.dateHeureCreation 	= ZonedDateTime.now();
+		this.matricule 			= nom.charAt(0) + prenom.charAt(0) + numSecuSocial ;
+		this.emailPro			= nom + "." + prenom + "@" + "societe.com" ;
+		this.actif 				= true ;
+		this.photo				= "PhotoJp.jpg" ;
+		
+	}
+	
 	/** Getter
 	 * @return the matricule
 	 */

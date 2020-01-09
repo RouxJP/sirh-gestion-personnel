@@ -48,7 +48,6 @@ public class ListerCollaborateursController extends HttpServlet {
 	
 		@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			// utilisation du service
 			List<Collaborateur> collaborateurs = collabService.listerCollaborateurs();
 			
 			req.setAttribute("listeNoms", collaborateurs);
