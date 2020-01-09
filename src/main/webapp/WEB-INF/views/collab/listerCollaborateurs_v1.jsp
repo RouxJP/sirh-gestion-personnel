@@ -10,7 +10,7 @@
 	<h1>Les collaborateurs</h1>
 	<ul>
 		<%	List<Collaborateur> listeNoms = (List<Collaborateur>) request.getAttribute("listeNoms");
-			for (Collaborateur collaborateur : listeNoms) {
+			for (Collaborateur collaborateur : listeNoms) { %>
 		%>
 		<li><%=collaborateur.getNom()%></li>
 		<li><%=collaborateur.getPrenom()%></li>

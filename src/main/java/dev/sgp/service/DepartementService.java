@@ -11,7 +11,10 @@ public class DepartementService {
 	List<Departement> listeDepartements = new ArrayList<>();
 
 	public List<Departement> listerDepartements() {
-		listeDepartements = (List) Arrays.asList("Comptabilité", "Ressources Humaines", "Informatique", "Administratif") ;
+		listeDepartements.add( new Departement( 1, "Comptabilité"));
+		listeDepartements.add( new Departement( 2, "Ressources Humaines"));
+		listeDepartements.add( new Departement( 3, "Informatique"));
+		listeDepartements.add( new Departement( 4, "Administratif"));
 
 		return listeDepartements;
 	}

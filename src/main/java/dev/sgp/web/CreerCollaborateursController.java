@@ -12,14 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dev.sgp.entite.Collaborateur;
+import dev.sgp.entite.Departement;
 import dev.sgp.service.CollaborateurService;
+import dev.sgp.service.DepartementService;
 import dev.sgp.util.Constantes;
 
 
 
 public class CreerCollaborateursController extends HttpServlet {
 
-	private CollaborateurService collabService = Constantes.COLLAB_SERVICE;
+	private CollaborateurService collabService 		= Constantes.COLLAB_SERVICE;
+	private DepartementService 	departementService 	= Constantes.COLLAB_DEPARTMENT;
 
 	@Override
 	protected void doGet( HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -68,6 +71,7 @@ public class CreerCollaborateursController extends HttpServlet {
 		
 		// Sec soc sur 15 carcateres
 		if( numSecSoc.length() != 15) {
+			// to-do erreurSaisie = true;
 			message += " ### le num de sec sociale doit faire 15 de long";
 		}
 	
@@ -85,8 +89,12 @@ public class CreerCollaborateursController extends HttpServlet {
 			//resp.getWriter().write("<p>" + message + "</p>");	
 			
 			resp.setContentType("text/html");
-			List<Collaborateur> collaborateurs = collabService.listerCollaborateurs();
-			req.setAttribute("listeNoms", collaborateurs);
+			
+			List<Collaborateur> collaborateurs  = collabService.listerCollaborateurs();
+			List<Departement> 	departements 	= departementService.listerDepartements();
+			req.setAttribute("listeNoms", 			collaborateurs);
+			req.setAttribute("listeDepartements", 	departements);
+			
 
 			req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp")
 			.forward(req, resp);	

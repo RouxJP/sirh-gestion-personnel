@@ -1,3 +1,4 @@
+<%@page import="dev.sgp.entite.Departement"%>
 <%@page import="dev.sgp.entite.Collaborateur"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
@@ -76,11 +77,18 @@
 
         <div class="col-4">
           <select class="custom-select">
-            <option selected>Tous</option>
-            <option value="1">Comptabilité</option>
-            <option value="2">Ressources Humaines</option>
-            <option value="3">Informatique</option>
-          </select>
+            <option selected>Tous.</option>
+            <% List<Departement> listDepartements = (List<Departement>) request.getAttribute("listeDepartements");
+            	for( Departement departement : listDepartements){ %>
+               		<option value="<%=departement.getId()%>"><%=departement.getNom()%></option>        		
+            <%	}
+            %>
+            <%--
+           		<option value="1">Comptabilité</option>
+            	<option value="2">Ressources Humaines</option>
+            	<option value="3">Informatique</option>
+             --%>
+           </select>
         </div>
       </div>
 

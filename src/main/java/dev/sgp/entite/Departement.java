@@ -4,6 +4,11 @@ public class Departement {
 	private Integer 	id ;
 	private String  	nom ;
 	
+	public Departement( Integer id, String nom) {
+		this.id = id ;
+		this.nom = nom;
+	}
+	
 	/** Getter
 	 * @return the id
 	 */
