@@ -4,16 +4,18 @@ import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 public class Collaborateur {
-	private String matricule;
-	private String nom;
-	private String prenom ;
-	private LocalDate dateNaissance;
-	private String adresse;
-	private String numSecuSocial;
-	private String emailPro;
-	private String photo;
-	private ZonedDateTime dateHeureCreation;
-	private boolean actif;
+	private String 			matricule;
+	private String 			nom;
+	private String 			prenom ;
+	private LocalDate 		dateNaissance;
+	private String 			adresse;
+	private String 			numSecuSocial;
+	private String 			emailPro;
+	private String 			photo;
+	private ZonedDateTime 	dateHeureCreation;
+	private boolean 		actif;
+	private String  		intitulePoste ;
+	private Departement		departement ;
 	
 	public Collaborateur( 	String nom, 	String prenom, LocalDate dateNaissance, 
 							String adresse, String numSecuSocial) {
@@ -150,6 +152,34 @@ public class Collaborateur {
 	 */
 	public void setActif(boolean actif) {
 		this.actif = actif;
+	}
+
+	/** Getter
+	 * @return the intitulePoste
+	 */
+	public String getIntitulePoste() {
+		return intitulePoste;
+	}
+
+	/** Setter
+	 * @param intitulePoste the intitulePoste to set
+	 */
+	public void setIntitulePoste(String intitulePoste) {
+		this.intitulePoste = intitulePoste;
+	}
+
+	/** Getter
+	 * @return the departement
+	 */
+	public Departement getDepartement() {
+		return departement;
+	}
+
+	/** Setter
+	 * @param departement the departement to set
+	 */
+	public void setDepartement(Departement departement) {
+		this.departement = departement;
 	}
 	
 

@@ -10,7 +10,7 @@ public class CollaborateurService {
 	List<Collaborateur> listeCollaborateurs = new ArrayList<>();
 
 	public List<Collaborateur> listerCollaborateurs() {
-		//listeCollaborateurs = (List) Arrays.asList("Robert", "Jean", "Hugues") ;
+		listeCollaborateurs = (List) Arrays.asList("Robert", "Jean", "Hugues") ;
 		return listeCollaborateurs;
 	}
 
