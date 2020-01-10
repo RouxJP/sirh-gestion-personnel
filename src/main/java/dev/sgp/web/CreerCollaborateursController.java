@@ -1,9 +1,7 @@
 package dev.sgp.web;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -95,9 +93,10 @@ public class CreerCollaborateursController extends HttpServlet {
 			req.setAttribute("listeNoms", 			collaborateurs);
 			req.setAttribute("listeDepartements", 	departements);
 			
-
-			req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp")
+			// Editer le collaborateur
+			req.getRequestDispatcher("/WEB-INF/views/collab/creerCollaborateurs.jsp")
 			.forward(req, resp);	
+			
 			
 		}
 

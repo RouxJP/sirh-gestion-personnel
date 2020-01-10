@@ -74,8 +74,6 @@
 					</div>
 				</div>
 
-				<a href="creer_errors.html">Afficher erreurs formulaires</a>
-
 				<div class="row" align="right">
 					<div class="col-12">
 						<button type="submit" class="btn btn-light">Créer</button>

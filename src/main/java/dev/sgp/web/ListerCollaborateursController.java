@@ -54,8 +54,8 @@ public class ListerCollaborateursController extends HttpServlet {
 			List<Collaborateur> collaborateurs 	= collabService.listerCollaborateurs();
 			List<Departement> 	departements 	= departementService.listerDepartements();
 			
-			req.setAttribute("listeNoms", 			collaborateurs);
-			req.setAttribute("listeDepartements", 	departements);
+			req.setAttribute("listeCollaborateurs", 		collaborateurs);
+			req.setAttribute("listeDepartements", 			departements);
 			
 			req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp")
 			.forward(req, resp);	
