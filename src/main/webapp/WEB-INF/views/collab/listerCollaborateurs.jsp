@@ -10,8 +10,6 @@
 </head>
 <body>
 
-	<!-- TODO -->
-	<!-- Just an image -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -103,14 +101,12 @@
 				</div>
 			</div>
 
-			<!-- Debut modif -->
 			<%
 				List<Collaborateur> listCollaborateurs = (List<Collaborateur>) request.getAttribute("listeCollaborateurs");
 
 				// Afficher 3 entetes de nom et prenom
 				for (nbrCollaborateur = 0; nbrCollaborateur < listCollaborateurs.size();) {
 					collaborateur = listCollaborateurs.get(nbrCollaborateur);
-					System.out.println("nbrCollaborateur : " + nbrCollaborateur);
 			%>
 			<div class="row">
 				<%
@@ -150,7 +146,7 @@
 					<p class="text-left"><%=collaborateur.getDepartement().getNom()%></p>
 					<p class="text-left"><%=collaborateur.getEmailPro()%></p>
 					<p class="text-left"><%=collaborateur.getTelephone()%></p>
-					<a href="editer.html" class="btn btn-primary btn-lg active"
+					<a href="/sgp/collaborateurs/editerJstl/" class="btn btn-primary btn-lg active"
 						role="button" aria-pressed="true">Editer</a>
 				</div>
 				<%
@@ -163,172 +159,6 @@
 				}
 			%>
 				
-
-
-
-
-
-
-
-
-
-
-			<!-- Fin modif -->
-
-			<!-- Avant modif
-
-
-			<div class="row">
-				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">%=collaborateur.getNom() + " " + collaborateur.getPrenom()%</span>
-				</div>
-				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">%=collaborateur.getNom() + " " + collaborateur.getPrenom()%</span>
-				</div>
-				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">%=collaborateur.getNom() + " " + collaborateur.getPrenom()%</span>
-				</div>
-			</div>
-
-			<div class="row">
-
-				<div class="col-1" class="border border-dark">
-					<img src="PhotoJp.jpg" alt="Photo" class="img-thumbnail">
-				</div>
-
-				<div class="col-1">
-					<p class="text-left">Fonction</p>
-					<p class="text-left">Département</p>
-					<p class="text-left">Email</p>
-					<p class="text-left">Téléphone</p>
-				</div>
-
-				<div class="col-2">
-					<p class="text-left">Ing dev</p>
-					<p class="text-left">Hérault</p>
-					<p class="text-left">jproux343@gmail.com</p>
-					<p class="text-left">06-04-43-16-23</p>
-					<a href="editer.html" class="btn btn-primary btn-lg active"
-						role="button" aria-pressed="true">Editer</a>
-				</div>
-
-				<div class="col-1" class="border border-dark">
-					<img src="PhotoJp.jpg" alt="Photo" class="img-thumbnail">
-				</div>
-
-				<div class="col-1">
-					<p class="text-left">Fonction</p>
-					<p class="text-left">Département</p>
-					<p class="text-left">Email</p>
-					<p class="text-left">Téléphone</p>
-				</div>
-
-				<div class="col-2">
-					<p class="text-left">Ing dev</p>
-					<p class="text-left">Hérault</p>
-					<p class="text-left">jproux343@gmail.com</p>
-					<p class="text-left">06-04-43-16-23</p>
-					<a href="editer.html" class="btn btn-primary btn-lg active"
-						role="button" aria-pressed="true">Editer</a>
-				</div>
-
-				<div class="col-1" class="border border-dark">
-					<img src="PhotoJp.jpg" alt="Photo" class="img-thumbnail">
-				</div>
-
-				<div class="col-1">
-					<p class="text-left">Fonction</p>
-					<p class="text-left">Département</p>
-					<p class="text-left">Email</p>
-					<p class="text-left">Téléphone</p>
-				</div>
-
-				<div class="col-2">
-					<p class="text-left">Ing dev</p>
-					<p class="text-left">Hérault</p>
-					<p class="text-left">jproux343@gmail.com</p>
-					<p class="text-left">06-04-43-16-23</p>
-					<a href="editer.html" class="btn btn-primary btn-lg active"
-						role="button" aria-pressed="true">Editer</a>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">Nom Prénom<</span>
-				</div>
-				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">Nom Prénom<</span>
-				</div>
-				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">Nom Prénom<</span>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-1" class="border border-dark">
-					<img src="PhotoJp.jpg" alt="Photo" class="img-thumbnail">
-				</div>
-
-				<div class="col-1">
-					<p class="text-left">Fonction</p>
-					<p class="text-left">Département</p>
-					<p class="text-left">Email</p>
-					<p class="text-left">Téléphone</p>
-				</div>
-
-				<div class="col-2">
-					<p class="text-left">Ing dev</p>
-					<p class="text-left">Hérault</p>
-					<p class="text-left">jproux343@gmail.com</p>
-					<p class="text-left">06-04-43-16-23</p>
-					<a href="editer.html" class="btn btn-primary btn-lg active"
-						role="button" aria-pressed="true">Editer</a>
-				</div>
-
-				<div class="col-1" class="border border-dark">
-					<img src="PhotoJp.jpg" alt="Photo" class="img-thumbnail">
-				</div>
-
-				<div class="col-1">
-					<p class="text-left">Fonction</p>
-					<p class="text-left">Département</p>
-					<p class="text-left">Email</p>
-					<p class="text-left">Téléphone</p>
-				</div>
-
-				<div class="col-2">
-					<p class="text-left">Ing dev</p>
-					<p class="text-left">Hérault</p>
-					<p class="text-left">jproux343@gmail.com</p>
-					<p class="text-left">06-04-43-16-23</p>
-					<button type="button" class="btn btn-light">Editer</button>
-				</div>
-
-				<div class="col-1" class="border border-dark">
-					<img src="PhotoJp.jpg" alt="Photo" class="img-thumbnail">
-				</div>
-
-				<div class="col-1">
-					<p class="text-left">Fonction</p>
-					<p class="text-left">Département</p>
-					<p class="text-left">Email</p>
-					<p class="text-left">Téléphone</p>
-				</div>
-
-				<div class="col-2">
-					<p class="text-left">Ing dev</p>
-					<p class="text-left">Hérault</p>
-					<p class="text-left">jproux343@gmail.com</p>
-					<p class="text-left">06-04-43-16-23</p>
-					<a href="editer.html" class="btn btn-primary btn-lg active"
-						role="button" aria-pressed="true">Editer</a>
-
-				</div>
-
-			</div>
-
--->
 
 		</div>
 

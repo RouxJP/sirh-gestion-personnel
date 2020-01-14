@@ -110,7 +110,7 @@
 					<c:forEach items="${listeCollaborateurs }" begin="${beginIndex }"
 						end="${endIndex }" var="collaborateur" varStatus="status">
 
-						<div class="col-4" style="background-color: #87ceeb;">
+						<div class="col-4" style="background-color: #87ceeb; border:solid 1px;">
 							<span text-white">
 								${collaborateur.nom} ${collaborateur.prenom}</span>
 						</div>
@@ -118,31 +118,29 @@
 				</div>
 
 				<!--  Corps informations sur identité collaborateur  -->
-				<div class="row">
+				<div class="row" >
 					<c:forEach items="${listeCollaborateurs }" begin="${beginIndex }"
 						end="${endIndex }" var="collaborateur" varStatus="status">
 
 
-						<div class="col-1" class="border border-dark" style="background-color: #ddd;">
+						<div class="col-1" style="background-color: #ddd; border:solid 1px;">
 							<img src="${collaborateur.photo}" alt="Photo"
 								class="img-thumbnail">
 						</div>
 
-						<div class="col-1" class="w-50 p-3" style="background-color: #aaa;">
+						<div class="col-1" class="w-50 p-3" style="background-color: #aaa; ">
 							<p class="text-left">Fonction</p>
 							<p class="text-left">Département</p>
 							<p class="text-left">Email</p>
 							<p class="text-left">Téléphone</p>
 						</div>
 
-						<div class="col-2" class="w-50 p-3" style="background-color: #ddd; ">
+						<div class="col-2" class="w-50 p-3" style="background-color: #ddd; border:solid 1px;">
 							<p class="text-left" >${collaborateur.intitulePoste}</p>
 							<p class="text-left">${collaborateur.departement.nom}</p>
-							<p class="text-left">${collaborateur.emailPro}</p>
+							<p class="text-left" >${collaborateur.emailPro}</p>
 							<p class="text-left">${collaborateur.telephone}</p>
 					  		<a href="/sgp/collaborateurs/editerJstl/" type="button" class="btn btn-primary" style="background-color: #00bfff;">Editer</a>
-					<!--		<button type="button"  href="/sgp/collaborateurs/editerJstl/" class="btn btn-primary" style="background-color: #00bfff;">Editer</button>
-					 -->
 							<p></p>
 						</div>
 					</c:forEach>
