@@ -18,7 +18,8 @@
 			<ul class="navbar-nav mr-auto">
 				<nav class="navbar navbar-light bg-light">
 					<a class="navbar-brand" href="#"> <img
-						src="logo-collaborateur.jpg" width="30" height="30" alt="">
+						src="/sgp/photo/logo-collaborateur.jpg" width="30" height="30"
+						alt="">
 					</a>
 				</nav>
 				<li class="nav-item active"><a class="nav-link" href="#">Collaborateurs
@@ -34,6 +35,10 @@
 	</nav>
 
 	<main>
+		<%
+			Collaborateur collaborateur;
+			int nbrCollaborateur = 0;
+		%>
 		<div class="container">
 			<div class="row">
 				<div class="col-4">
@@ -93,56 +98,43 @@
            		<option value="1">Comptabilité</option>
             	<option value="2">Ressources Humaines</option>
             	<option value="3">Informatique</option>
-             --%>
+                       --%>
 					</select>
 				</div>
 			</div>
 
 			<!-- Debut modif -->
 			<%
-			List<Collaborateur> listCollaborateurs = (List<Collaborateur>) request.getAttribute("listeCollaborateurs");						
-			Collaborateur 		collaborateur;
-			// Parcourir tous les collaborateurs
-			for ( int nbrCollaborateur = 0 ; ( nbrCollaborateur < listCollaborateurs.size() )  ; nbrCollaborateur++) {					
+				List<Collaborateur> listCollaborateurs = (List<Collaborateur>) request.getAttribute("listeCollaborateurs");
 
-				if( nbrCollaborateur % 3 == 0 ){
-					// Afficher Nom-Prénom de 3 collaborateur au max
-					int nbrAff = Math.min( listCollaborateurs.size() - nbrCollaborateur, 3 );
-					if( nbrAff == 0){
-						// Il n'y a plus de collaborateur à afficher
-						break;
-					}
-					%>
-					<div class="row">	
-					<%	
-					System.out.println( "nbrAff : " + nbrAff) ;
-					for( int j = 0 ; j < nbrAff ; j++) {
-						collaborateur = listCollaborateurs.get( nbrCollaborateur + j);
-					%>
-						<div class="col-4">
-							<span class="d-block p-2 bg-primary text-white"><%=collaborateur.getNom() + " " + collaborateur.getPrenom()%></span>
-						</div>
-					<% 
-					}
-					%>
-					</div>
-				<%									
-				}
+				// Afficher 3 entetes de nom et prenom
+				for (nbrCollaborateur = 0; nbrCollaborateur < listCollaborateurs.size();) {
+					collaborateur = listCollaborateurs.get(nbrCollaborateur);
+					System.out.println("nbrCollaborateur : " + nbrCollaborateur);
+			%>
+			<div class="row">
+				<%
+					for (int j = 0; j < 3; j++) {
+							collaborateur = listCollaborateurs.get(nbrCollaborateur + j);
 				%>
-				
-				<% 
-				System.out.println( "nbrCollaborateur : " + nbrCollaborateur) ;
-				collaborateur = listCollaborateurs.get( nbrCollaborateur);
-				
-				if( nbrCollaborateur % 3 == 0 ){
-					%>
-					<div class="row">
-					<%
-				}
+				<div class="col-4">
+					<span class="d-block p-2 bg-primary text-white"><%=collaborateur.getNom() + " " + collaborateur.getPrenom()%></span>
+				</div>
+				<%
+					}
 				%>
+			</div>
 
+
+
+			<div class="row">
+				<%
+					for (int j = 0; j < 3; j++) {
+						collaborateur = listCollaborateurs.get(nbrCollaborateur + j);
+				%>
 				<div class="col-1" class="border border-dark">
-					<img src="<%=collaborateur.getPhoto()%>" alt="Photo" class="img-thumbnail">
+					<img src="<%=collaborateur.getPhoto()%>" alt="Photo"
+						class="img-thumbnail">
 				</div>
 
 				<div class="col-1">
@@ -154,18 +146,31 @@
 
 				<div class="col-2">
 					<p class="text-left"><%=collaborateur.getIntitulePoste()%></p>
-					<p class="text-left"><%=nbrCollaborateur %></p>
+					<p class="text-left"><%=collaborateur.getDepartement()%></p>
 					<p class="text-left"><%=collaborateur.getEmailPro()%></p>
 					<p class="text-left"><%=collaborateur.getTelephone()%></p>
 					<a href="editer.html" class="btn btn-primary btn-lg active"
 						role="button" aria-pressed="true">Editer</a>
 				</div>
-				
-			<%
-			}
-			%>
+				<%
+					}
+					nbrCollaborateur = nbrCollaborateur + 3;
+				%>
 			</div>
+
+			<%
+				}
+			%>
 				
+
+
+
+
+
+
+
+
+
 
 			<!-- Fin modif -->
 
@@ -174,13 +179,13 @@
 
 			<div class="row">
 				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">Nom Prénom</span>
+					<span class="d-block p-2 bg-primary text-white">%=collaborateur.getNom() + " " + collaborateur.getPrenom()%</span>
 				</div>
 				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">Nom Prénom</span>
+					<span class="d-block p-2 bg-primary text-white">%=collaborateur.getNom() + " " + collaborateur.getPrenom()%</span>
 				</div>
 				<div class="col-4">
-					<span class="d-block p-2 bg-primary text-white">Nom Prénom</span>
+					<span class="d-block p-2 bg-primary text-white">%=collaborateur.getNom() + " " + collaborateur.getPrenom()%</span>
 				</div>
 			</div>
 

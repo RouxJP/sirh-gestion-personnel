@@ -79,7 +79,7 @@ public class CreerCollaborateursController extends HttpServlet {
 			
 		}else {
 			// Pas d'erreur on ajoute le collborateur
-			Collaborateur collaborateur = new Collaborateur( nom, prenom, dateNaissance, adresse, numSecSoc);
+			Collaborateur collaborateur = new Collaborateur( nom, prenom, dateNaissance, "", adresse, numSecSoc);
 			collabService.sauvegarderCollaborateur( collaborateur);
 
 			//resp.setContentType("text/html");
@@ -94,7 +94,7 @@ public class CreerCollaborateursController extends HttpServlet {
 			req.setAttribute("listeDepartements", 	departements);
 			
 			// Editer le collaborateur
-			req.getRequestDispatcher("/WEB-INF/views/collab/creerCollaborateurs.jsp")
+			req.getRequestDispatcher("/WEB-INF/views/collab/creerCollaborateur.jsp")
 			.forward(req, resp);	
 			
 			

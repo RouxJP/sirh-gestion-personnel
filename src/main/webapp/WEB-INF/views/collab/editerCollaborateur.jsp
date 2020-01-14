@@ -18,7 +18,7 @@
 			<ul class="navbar-nav mr-auto">
 				<nav class="navbar navbar-light bg-light">
 					<a class="navbar-brand" href="#"> <img
-						src="sgp/logo-collaborateur.jpg" width="30" height="30" alt="">
+						src="/sgp/photo/logo-collaborateur.jpg" width="30" height="30" alt="">
 					</a>
 				</nav>
 				<li class="nav-item active"><a class="nav-link" href="#">Collaborateurs
@@ -68,7 +68,7 @@
 										<div class="row">
 
 											<div class="col-5">
-												<h5>NOM Prénom - Matricule</h5>
+												<h5><%=collaborateur.getNom() + " " + collaborateur.getPrenom() + "-" + collaborateur.getMatricule()%></h5>
 											</div>
 
 											<div class="col-5">
@@ -77,11 +77,6 @@
 														id="customCheck1"> <label
 														class="custom-control-label" for="customCheck1">Désactiver</label>
 												</div>
-											</div>
-
-
-											<div class="col-10">
-												<h7>Identité</h7>
 											</div>
 
 
@@ -199,30 +194,11 @@
 									<div class="col-10">
 										<div class="row">
 
-											<div class="col-5">
-												<h5>NOM Prénom - Matricule</h5>
-											</div>
-
-											<div class="col-5">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														id="customCheck1"> <label
-														class="custom-control-label" for="customCheck1">Désactiver</label>
-												</div>
-											</div>
-
-
 											<div class="col-10">
-												<h7>Identité</h7>
+												<h5><%=collaborateur.getNom() + " " + collaborateur.getPrenom() + "-" + collaborateur.getMatricule()%></h5>
 											</div>
 
-											<div class="col-10">
-												<h7>Poste</h7>
-											</div>
-
-											<div class="col-10">
-												<h7>Coordonnées Bancaires</h7>
-											</div>
+	
 
 											<div class="col-5">
 												<h7>Banque</h7>
@@ -292,26 +268,10 @@
 									<div class="col-10">
 										<div class="row">
 
-											<div class="col-5">
-												<h5>NOM Prénom - Matricule</h5>
-											</div>
-
-											<div class="col-5">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input"
-														id="customCheck1"> <label
-														class="custom-control-label" for="customCheck1">Désactiver</label>
-												</div>
-											</div>
-
-
 											<div class="col-10">
-												<h7>Identité</h7>
+												<h5><%=collaborateur.getNom() + " " + collaborateur.getPrenom() + "-" + collaborateur.getMatricule()%></h5>
 											</div>
 
-											<div class="col-10">
-												<h7>Poste</h7>
-											</div>
 
 											<div class="col-5">
 												<h7>Département</h7>
