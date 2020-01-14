@@ -44,6 +44,7 @@ public class CreerCollaborateursController extends HttpServlet {
 													DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 */		String adresse 			= req.getParameter("adresse");
 		String numSecSoc 		= req.getParameter("num_ss");
+		String numTel 			= req.getParameter("num_tel");
 		
 		
 		// Controller les champs obligatoires
@@ -65,6 +66,10 @@ public class CreerCollaborateursController extends HttpServlet {
 			erreurSaisie = true;
 			message += " - numSecSoc";
 		}
+		if( ( numTel == null) || ( numTel.isEmpty()) ) {
+			erreurSaisie = true;
+			message += " - numTel";
+		}
 		message += " sont obligatoires";
 		
 		// Sec soc sur 15 carcateres
@@ -79,7 +84,9 @@ public class CreerCollaborateursController extends HttpServlet {
 			
 		}else {
 			// Pas d'erreur on ajoute le collborateur
-			Collaborateur collaborateur = new Collaborateur( nom, prenom, dateNaissance, "", adresse, numSecSoc);
+			Collaborateur collaborateur = 
+					new Collaborateur( nom, prenom, dateNaissance, "", adresse, numSecSoc, numTel,
+										new Departement( 3, "Informatique"));
 			collabService.sauvegarderCollaborateur( collaborateur);
 
 			//resp.setContentType("text/html");

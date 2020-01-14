@@ -7,8 +7,18 @@
 		</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>ListerCollaborateursControllerJstl</servlet-name>
+		<servlet-class>dev.sgp.web.ListerCollaborateursControllerJstl
+		</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>EditerCollaborateursController</servlet-name>
 		<servlet-class>dev.sgp.web.EditerCollaborateursController
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EditerCollaborateursControllerJstl</servlet-name>
+		<servlet-class>dev.sgp.web.EditerCollaborateursControllerJstl
 		</servlet-class>
 	</servlet>
 	<servlet>
@@ -17,15 +27,24 @@
 		</servlet-class>
 	</servlet>
 
+
 	<servlet-mapping>
 		<servlet-name>ListerCollaborateursController</servlet-name>
 		<url-pattern>/collaborateurs/lister</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
+		<servlet-name>ListerCollaborateursControllerJstl</servlet-name>
+		<url-pattern>/collaborateurs/listerJstl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>EditerCollaborateursController</servlet-name>
 		<url-pattern>/collaborateurs/editer/</url-pattern>
 	</servlet-mapping>
-		<servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EditerCollaborateursControllerJstl</servlet-name>
+		<url-pattern>/collaborateurs/editerJstl/</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>CreerCollaborateursController</servlet-name>
 		<url-pattern>/collaborateurs/creer/</url-pattern>
 	</servlet-mapping>

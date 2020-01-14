@@ -1,5 +1,6 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="/WEB-INF/tld/c.tld" prefix="c" %> 
 
 <!DOCTYPE html>
 <html>

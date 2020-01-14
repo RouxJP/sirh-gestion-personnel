@@ -14,7 +14,7 @@ import dev.sgp.service.CollaborateurService;
 import dev.sgp.service.DepartementService;
 import dev.sgp.util.Constantes;
 
-public class EditerCollaborateursController extends HttpServlet {
+public class EditerCollaborateursControllerJstl extends HttpServlet {
 	private CollaborateurService 	collabService 			= Constantes.COLLAB_SERVICE;
 	private DepartementService 	departementService 	= Constantes.COLLAB_DEPARTMENT;
 	
@@ -39,7 +39,8 @@ public class EditerCollaborateursController extends HttpServlet {
 		req.setAttribute("listeDepartements", 	departements);		
 		req.setAttribute( "collaborateur", collaborateur);
 
-		req.getRequestDispatcher("/WEB-INF/views/collab/editerCollaborateur.jsp").forward(req, resp);	
+		//req.getRequestDispatcher("/WEB-INF/views/collab/editerCollaborateur.jsp").forward(req, resp);	
+		req.getRequestDispatcher("/WEB-INF/views/collab/editerCollaborateurJstl.jsp").forward(req, resp);	
 		
 	}
 

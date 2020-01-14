@@ -1,6 +1,9 @@
 <%@page import="dev.sgp.entite.Departement"%>
 <%@page import="dev.sgp.entite.Collaborateur"%>
 <%@page import="java.util.List"%>
+<%@ taglib uri="/WEB-INF/tld/c.tld" prefix="c" %> 
+<!--       uri="http://java.sun.com/jsp/jstl/core" prefix="c"-->
+
 <%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,13 +37,14 @@
 	</nav>
 
 	<main>
-	    <%
+	    <!-- 
 			Collaborateur collaborateur = (Collaborateur) request.getAttribute("collaborateur");
-	    %> 
+		-->
+		<c:set var="collaborateur" scope="session" value="${request.collaborateur}"> </c:set>;
 
 		<form method="POST" action="#">
 
-			<div class="container">
+			<div class="container"> 
 
 				<div class="accordion" id="accordionExample">
 				
@@ -61,7 +65,7 @@
 
 								<div class="row">
 									<div class="col-2" class="border border-dark">
-										<img src="<%=collaborateur.getPhoto()%>" alt="Photo"
+										<img src="${ collaborateur.photo}" alt="Photo"
 											class="img-thumbnail">
 									</div>
 
@@ -69,7 +73,7 @@
 										<div class="row">
 
 											<div class="col-5">
-												<h5><%=collaborateur.getNom() + " " + collaborateur.getPrenom() + "-" + collaborateur.getMatricule()%></h5>
+												<h5>${collaborateur.nom} ${collaborateur.prenom} - ${collaborateur.matricule}</h5>
 											</div>
 
 											<div class="col-5">
@@ -101,7 +105,7 @@
 
 											<div class="col-5">
 												<input type="text" class="form-control"
-													placeholder="<%=collaborateur.getNom()%>" aria-label="Nom"
+													placeholder="${collaborateur.nom}" aria-label="Nom"
 													aria-describedby="basic-addon1">
 											</div>
 
@@ -111,7 +115,7 @@
 
 											<div class="col-5">
 												<input type="text" class="form-control"
-													placeholder="<%=collaborateur.getPrenom()%>"
+													placeholder="${collaborateur.prenom}"
 													aria-label="Prenom" aria-describedby="basic-addon1">
 											</div>
 
@@ -121,7 +125,7 @@
 
 											<div class="col-5">
 												<input type="date" class="form-control"
-													placeholder="Username" aria-label="Date de naissance"
+													placeholder="${collaborateur.dateNaissance}" aria-label="Date de naissance"
 													aria-describedby="basic-addon1">
 											</div>
 
@@ -132,7 +136,7 @@
 											<div class="col-5">
 												<textarea class="form-control is-invalid"
 													id="validationTextarea"
-													placeholder="<%=collaborateur.getAdresse()%>" required></textarea>
+													placeholder="${collaborateur.adresse}" required></textarea>
 											</div>
 
 											<div class="col-5">
@@ -141,7 +145,7 @@
 
 											<div class="col-5">
 												<input type="text" class="form-control"
-													placeholder="<%=collaborateur.getNumSecuSocial()%>"
+													placeholder="${collaborateur.numSecuSocial}"
 													aria-label="Num de sec soc" aria-describedby="basic-addon1">
 											</div>
 
@@ -151,7 +155,7 @@
 
 											<div class="col-5">
 												<input type="tel" class="form-control"
-													placeholder="<%=collaborateur.getTelephone()%>"
+													placeholder="${collaborateur.telephone}"
 													aria-label="Téléphone" aria-describedby="basic-addon1">
 											</div>
 
@@ -188,7 +192,7 @@
 							<div class="card-body">
 								<div class="row">
 									<div class="col-2" class="border border-dark">
-										<img src="<%=collaborateur.getPhoto()%>" alt="Photo"
+										<img src="${collaborateur.photo}" alt="Photo"
 											class="img-thumbnail">
 									</div>
 
@@ -196,7 +200,7 @@
 										<div class="row">
 
 											<div class="col-10">
-												<h5><%=collaborateur.getNom() + " " + collaborateur.getPrenom() + "-" + collaborateur.getMatricule()%></h5>
+												<h5>${collaborateur.nom} ${collaborateur.prenom} - ${collaborateur.matricule}</h5>
 											</div>
 
 	
@@ -207,7 +211,7 @@
 
 											<div class="col-5">
 												<input type="text" class="form-control"
-													placeholder="<%=collaborateur.getBanque()%>"
+													placeholder="${collaborateu.banque}"
 													aria-label="Banque" aria-describedby="basic-addon1">
 											</div>
 
@@ -218,7 +222,7 @@
 
 											<div class="col-5">
 												<input type="text" class="form-control"
-													placeholder="<%=collaborateur.getBic()%>" aria-label="Bic"
+													placeholder="${collaborateur.bic}" aria-label="Bic"
 													aria-describedby="basic-addon1">
 											</div>
 
@@ -229,7 +233,7 @@
 
 											<div class="col-5">
 												<input type="text" class="form-control"
-													placeholder="<%=collaborateur.getIban()%>"
+													placeholder="${collaborateur.iban}"
 													aria-label="Iban" aria-describedby="basic-addon1">
 											</div>
 										</div>
@@ -262,7 +266,7 @@
 
 								<div class="row">
 									<div class="col-2" class="border border-dark">
-										<img src="<%=collaborateur.getPhoto()%>" alt="Photo"
+										<img src="${collaborateur.photo}" alt="Photo"
 											class="img-thumbnail">
 									</div>
 
@@ -270,7 +274,7 @@
 										<div class="row">
 
 											<div class="col-10">
-												<h5><%=collaborateur.getNom() + " " + collaborateur.getPrenom() + "-" + collaborateur.getMatricule()%></h5>
+												<h5>${collaborateur.nom} ${collaborateur.prenom} - ${collaborateur.matricule}</h5>
 											</div>
 
 
@@ -303,7 +307,7 @@
 
 											<div class="col-5">
 												<input type="text" class="form-control"
-													placeholder="<%=collaborateur.getIntitulePoste()%>"
+													placeholder="${collaborateur.intitulePoste}"
 													aria-label="Poste" aria-describedby="basic-addon1">
 											</div>
 										</div>

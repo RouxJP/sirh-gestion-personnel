@@ -25,7 +25,8 @@ public class Collaborateur {
 
 	public Collaborateur(	String nom, String prenom, LocalDate dateNaissance,
 							String fonction,
-							String adresse, String numSecuSocial)  {
+							String adresse, String numSecuSocial, String telephone,
+							Departement departement)  {
 		this.nom 					= nom;
 		this.prenom 				= prenom;
 		this.dateNaissance 			= dateNaissance;
@@ -36,6 +37,8 @@ public class Collaborateur {
 		this.matricule 				= nom.toUpperCase().charAt(0) + prenom.toUpperCase().charAt(0) + numSecuSocial;
 		this.actif 					= true;
 		this.intitulePoste			= fonction ;
+		this.telephone				= telephone ;
+		this.departement			= departement;
 
 		ResourceBundle prop 			= ResourceBundle.getBundle("Sgp");
 		String suffixe_email 			= prop.getString("suffixe_email");

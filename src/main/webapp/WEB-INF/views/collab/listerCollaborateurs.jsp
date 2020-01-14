@@ -115,6 +115,7 @@
 			<div class="row">
 				<%
 					for (int j = 0; j < 3; j++) {
+						    if( ( nbrCollaborateur + j ) == listCollaborateurs.size()) break;
 							collaborateur = listCollaborateurs.get(nbrCollaborateur + j);
 				%>
 				<div class="col-4">
@@ -146,7 +147,7 @@
 
 				<div class="col-2">
 					<p class="text-left"><%=collaborateur.getIntitulePoste()%></p>
-					<p class="text-left"><%=collaborateur.getDepartement()%></p>
+					<p class="text-left"><%=collaborateur.getDepartement().getNom()%></p>
 					<p class="text-left"><%=collaborateur.getEmailPro()%></p>
 					<p class="text-left"><%=collaborateur.getTelephone()%></p>
 					<a href="editer.html" class="btn btn-primary btn-lg active"
